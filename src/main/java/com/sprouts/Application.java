@@ -5,6 +5,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.sprouts.util.PopulateDatabase;
+
 @SpringBootApplication
 public class Application implements ApplicationRunner {
 
@@ -13,6 +15,7 @@ public class Application implements ApplicationRunner {
 	}
 
 	public void run(ApplicationArguments arg0) throws Exception {
+		PopulateDatabase.main(null);
 	}
 
 }

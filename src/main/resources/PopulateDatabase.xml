@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- Users -->
+
+	<bean id="user1" class="com.sprouts.model.User">
+		<property name="firstName" value="Peter" />
+		<property name="lastName" value="Griffin" />
+		<property name="gender" value="M" />
+		<property name="age" value="42" />
+	</bean>
+	
+	<bean id="user2" class="com.sprouts.model.User">
+		<property name="firstName" value="Lois" />
+		<property name="lastName" value="Griffin" />
+		<property name="gender" value="F" />
+		<property name="age" value="40" />
+	</bean>
+	
+	<bean id="user3" class="com.sprouts.model.User">
+		<property name="firstName" value="Stewie" />
+		<property name="lastName" value="Griffin" />
+		<property name="gender" value="M" />
+		<property name="age" value="1" />
+	</bean>
+	
+</beans>
