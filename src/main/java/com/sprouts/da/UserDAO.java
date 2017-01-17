@@ -1,13 +1,19 @@
 package com.sprouts.da;
- 
-import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.repository.CrudRepository;
 
 import com.sprouts.model.User;
- 
-public interface UserDAO {
-    public List<User> getUsers();
-    public Integer createUser(User user);
-    public Integer updateUser(User user);
-    public Integer deleteUser(String id);
-    public void insertBatch();
+
+@Transactional
+public interface UserDAO extends CrudRepository<User, Integer> {
+
+	/**
+	 * This method will find an User instance in the database by its email. Note
+	 * that this method is not implemented and its working code will be
+	 * automatically generated from its signature by Spring Data JPA.
+	 */
+	public User findByFirstName(String firstName);
+
 }
