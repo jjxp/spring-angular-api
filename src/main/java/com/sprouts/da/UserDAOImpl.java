@@ -1,4 +1,4 @@
-package com.jgal.web.crud.angular.da;
+package com.sprouts.da;
  
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
- 
-import com.jgal.web.crud.angular.model.User;
+
+import com.sprouts.model.User;
  
 @Repository
 public class UserDAOImpl implements UserDAO {

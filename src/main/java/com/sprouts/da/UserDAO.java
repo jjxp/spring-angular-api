@@ -1,8 +1,8 @@
-package com.jgal.web.crud.angular.da;
+package com.sprouts.da;
  
 import java.util.List;
- 
-import com.jgal.web.crud.angular.model.User;
+
+import com.sprouts.model.User;
  
 public interface UserDAO {
     public List<User> getUsers();

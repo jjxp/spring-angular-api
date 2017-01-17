@@ -1,4 +1,4 @@
-package com.jgal.web.crud.angular.model;
+package com.sprouts.model;
  
 public final class ResponseObject {
     private boolean success;

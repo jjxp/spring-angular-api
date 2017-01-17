@@ -1,4 +1,4 @@
-package com.jgal.web.crud.angular.controller;
+package com.sprouts.controller;
  
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jgal.web.crud.angular.model.ResponseObject;
-import com.jgal.web.crud.angular.model.User;
-import com.jgal.web.crud.angular.service.ServiceFacade;
+import com.sprouts.model.ResponseObject;
+import com.sprouts.model.User;
+import com.sprouts.service.ServiceFacade;
  
 @RestController
 public class UserController {

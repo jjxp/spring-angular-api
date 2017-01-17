@@ -1,8 +1,7 @@
 'use strict';
-var myApp = myApp || {};
+var angularApp = angularApp || {};
  
 (function(){
-    myApp.factories = angular.module('myAppFactories', []),
-    myApp.controllers = angular.module('myAppControllers', [ 'myAppFactories', 'ngRoute' ]),
-    myApp.app = angular.module('myApp', [ 'ngRoute', 'myAppControllers']);
+	angularApp.controllers = angular.module('angularAppControllers', [ 'ngRoute' ]),
+	angularApp.app = angular.module('angularApp', [ 'ngRoute', 'angularAppControllers']);
 })();

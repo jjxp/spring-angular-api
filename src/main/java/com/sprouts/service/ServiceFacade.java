@@ -1,4 +1,4 @@
-package com.jgal.web.crud.angular.service;
+package com.sprouts.service;
  
  
 public interface ServiceFacade {

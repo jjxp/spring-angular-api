@@ -1,4 +1,4 @@
-package com.jgal.web.crud.angular.model;
+package com.sprouts.model;
  
 public class User {
     private Integer id;

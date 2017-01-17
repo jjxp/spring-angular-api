@@ -1,11 +1,11 @@
-package com.jgal.web.crud.angular.service;
+package com.sprouts.service;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
- 
-import com.jgal.web.crud.angular.da.UserDAO;
-import com.jgal.web.crud.angular.model.User;
+
+import com.sprouts.da.UserDAO;
+import com.sprouts.model.User;
  
 @Service("userService")
 public class UserService implements ServiceFacade {

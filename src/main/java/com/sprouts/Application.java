@@ -1,12 +1,12 @@
-package com.jgal.web.crud.angular;
+package com.sprouts;
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
- 
-import com.jgal.web.crud.angular.service.ServiceFacade;
+
+import com.sprouts.service.ServiceFacade;
  
 @SpringBootApplication
 public class Application implements ApplicationRunner{

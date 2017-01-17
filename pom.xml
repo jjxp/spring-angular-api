@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>jgal-tutorials</groupId>
-  <artifactId>jgal-web-angular-crud</artifactId>
-  <version>0.1.0</version>
+  <groupId>org.sprouts</groupId>
+  <artifactId>spring-angular-api</artifactId>
+  <version>0.1</version>
    
   <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,23 +27,6 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-        <dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>angularjs</artifactId>
-			<version>1.4.9</version>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- Needed for mapping json in backend endpoints -->
-		<dependency>
-		    <groupId>org.codehaus.jackson</groupId> 
-		    <artifactId>jackson-mapper-asl</artifactId>
-		    <version>1.9.7</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.codehaus.jackson</groupId> 
-		    <artifactId>jackson-core-asl</artifactId>
-		    <version>1.9.7</version>
-		</dependency>
     </dependencies>
  
     <build>
