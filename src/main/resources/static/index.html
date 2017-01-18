@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <title>spring-angular-api</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="webjars/angular-swagger-ui/0.4.0/dist/css/swagger-ui.min.css" rel="stylesheet" >
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -45,6 +46,8 @@
 				<div class="col-md-4">
 					<h4>See our source code on GitHub!</h4>
 					<a href="https://github.com/jjxp/spring-angular-api/"><img src="img/github-white.png" height="50"/></a>
+					<br><br>
+					<p>See our <a href="#/apiDoc">API documentation</a> too!</p>
 				</div>
 				<div class="col-md-4">
 					<h4>Escuela Técnica Superior de Ingeniería Informática</h4>
@@ -59,8 +62,12 @@
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+	<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
+	<script src="webjars/angular-swagger-ui/0.4.0/dist/scripts/swagger-ui.min.js"></script>
 	<script src="./app/app.js"></script>
 	<script src="./app/controller/routes.js"></script>
 	<script src="./app/controller/userController.js"></script>
+	<script src="./app/controller/apiDocController.js"></script>
 </body>
 </html>
