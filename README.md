@@ -14,6 +14,8 @@ The most important technologies that are being used in this project are, among o
 * [Twitter Bootstrap] - a famous CSS framework for styling the front-end resources
 * [MySQL] - as a database engine
 * [Maven] - as a build manager
+* [Swagger] - as a tool for automatically generating API documentation
+* [angular-translate] - as a package for i18n support
 
 ### Installation
 
@@ -54,3 +56,5 @@ spring-angular-api is constrained to the following licenses:
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
    [Git]: <https://git-scm.com/>
    [AngularJS]: <http://angularjs.org>
+   [Swagger]: <http://swagger.io/>
+   [angular-translate]: <https://angular-translate.github.io/>
