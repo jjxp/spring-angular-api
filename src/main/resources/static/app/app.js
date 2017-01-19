@@ -12,6 +12,9 @@ angularApp.config([ '$translateProvider', function($translateProvider) {
 	    }, {
 	        prefix: '/app/view/user/locale-',
 	        suffix: '.json'
+	    }, {
+	        prefix: '/app/view/api/locale-',
+	        suffix: '.json'
 	    }]
 	});
 	$translateProvider.preferredLanguage('en');
