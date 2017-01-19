@@ -4,7 +4,7 @@
 }
 </style>
 <div class="well page">
-	<h3 ng-show="isLoading">Loading API docs...</h3>
+	<h3 ng-show="isLoading">{{ 'api.loading' | translate }}...</h3>
 	<div swagger-ui url="swaggerUrl" loading="isLoading" parser="json"
 		api-explorer="true"></div>
 </div>
