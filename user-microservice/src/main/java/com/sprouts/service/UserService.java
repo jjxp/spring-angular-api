@@ -48,6 +48,8 @@ public class UserService implements ServiceFacade {
 			Collection<User> result;
 
 			result = (Collection<User>) userDAO.findAll();
+			User a = new User(7,"Peter","Griffin","42","M");
+			result.add(a);
 
 			return result;
 		}
