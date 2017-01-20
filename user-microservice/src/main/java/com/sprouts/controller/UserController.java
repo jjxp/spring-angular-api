@@ -2,8 +2,9 @@ package com.sprouts.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sprouts.model.ResponseObject;
 import com.sprouts.model.User;
-import com.sprouts.service.ServiceFacade;
+import com.sprouts.service.UserService;
 
 import io.swagger.annotations.Api;
 
@@ -19,9 +20,18 @@ import io.swagger.annotations.Api;
 @Api
 public class UserController {
 
-	@Autowired
-	private ServiceFacade userService;
+//	@Autowired
+	private UserService userService;
 
+	public UserController(String accountsService) {
+		this.userService = new UserService(accountsService);
+	}
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.setAllowedFields("accountNumber", "searchText");
+	}
+	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> userInfo() throws Exception {

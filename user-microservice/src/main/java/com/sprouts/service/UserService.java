@@ -10,10 +10,16 @@ import com.sprouts.da.UserDAO;
 import com.sprouts.model.User;
 
 @Service("userService")
-public class UserService implements ServiceFacade {
+public class UserService {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	protected String serviceUrl;
+
+	public UserService(String serviceUrl) {
+		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://" + serviceUrl;
+	}
 
 	public Object doService(Object... args) throws Exception {
 		Assert.notNull(args[0]);
@@ -38,7 +44,7 @@ public class UserService implements ServiceFacade {
 		} else if (args[0].equals("delete")) {
 			User result;
 
-			result = userDAO.findOne(Integer.valueOf((String)args[1]));
+			result = userDAO.findOne(Integer.valueOf((String) args[1]));
 
 			userDAO.delete(result);
 
