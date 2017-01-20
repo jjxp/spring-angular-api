@@ -29,10 +29,6 @@ public class WebServer {
 
     @Bean
     public WebController accountsController() {
-         // 1. Value should not be hard-coded, just to keep things simple
-         //        in this example.
-         // 2. Case insensitive: could also use: http://accounts-service
-         return new WebController
-                       ("http://localhost:2222");  // serviceUrl
+         return new WebController("http://localhost:2222");
     }
 }

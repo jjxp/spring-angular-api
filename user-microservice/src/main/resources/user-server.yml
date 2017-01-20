@@ -3,6 +3,13 @@ spring:
   application:
      name: users-service
 
+  jpa:
+      database: MYSQL
+      hibernate:
+        ddl-auto: update
+  datasource:
+    platform: mysql
+
 # Discovery Server Access
 eureka:
   client:

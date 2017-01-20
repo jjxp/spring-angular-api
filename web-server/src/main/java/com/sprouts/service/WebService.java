@@ -7,6 +7,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.sprouts.model.ResponseObject;
 import com.sprouts.model.User;
 
 @Service
@@ -29,4 +30,13 @@ public class WebService {
 		
 		return Arrays.asList(result);
 	}
+	
+	public ResponseObject create(User user) {
+		ResponseObject result;
+		
+		result = restTemplate.postForObject(serviceUrl + "/users", user, ResponseObject.class);
+		
+		return result;
+	}
+	
 }
