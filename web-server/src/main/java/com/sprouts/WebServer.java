@@ -12,11 +12,10 @@ import com.sprouts.controller.WebController;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(useDefaultFilters=false)  // Disable component scanner
+@ComponentScan(useDefaultFilters=false)
 public class WebServer {
 
     public static void main(String[] args) {
-        // Will configure using web-server.yml
         System.setProperty("spring.config.name", "web-server");
         SpringApplication.run(WebServer.class, args);
     }
@@ -28,7 +27,7 @@ public class WebServer {
     }
 
     @Bean
-    public WebController accountsController() {
-         return new WebController("http://localhost:2222");
+    public WebController usersController() {
+    	return new WebController("http://localhost:2222");
     }
 }

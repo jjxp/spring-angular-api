@@ -32,11 +32,5 @@ public class UserServer implements ApplicationRunner {
 	public void run(ApplicationArguments arg0) throws Exception {
 		PopulateDatabase.main(null);
 	}
-	
-//	@Bean
-//	@Primary
-//	public DataSource primaryDataSource() {
-//	    return DataSourceBuilder.create().build();
-//	}
 
 }

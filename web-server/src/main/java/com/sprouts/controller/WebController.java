@@ -3,8 +3,6 @@ package com.sprouts.controller;
 import java.util.List;
 
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,22 +15,23 @@ import com.sprouts.service.WebService;
 @RestController
 public class WebController {
 
-	protected WebService accountsService;
+	// Managed stub services --------------------------------------------------
+	
+	protected WebService webUserService;
 
-	public WebController(String accountsService) {
-		this.accountsService = new WebService(accountsService);
+	// Constructor ------------------------------------------------------------
+	
+	public WebController(String webUserService) {
+		this.webUserService = new WebService(webUserService);
 	}
-
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.setAllowedFields("accountNumber", "searchText");
-	}
-
+	
+	// Requests intercepter ---------------------------------------------------
+	
 	@RequestMapping(value = "users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> userInfo() {
 		List<User> result;
 		
-		result = accountsService.findAll();
+		result = webUserService.findAll();
 		
 		return result;
 	}
@@ -41,16 +40,25 @@ public class WebController {
 	public ResponseObject createUser(@RequestBody User user) throws Exception {
 		ResponseObject result;
 		
-		result = accountsService.create(user);
+		result = webUserService.create(user);
 		
 		return result;
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseObject updateUser(@RequestBody User user) throws Exception {
-ResponseObject result;
+		ResponseObject result;
 		
-		result = accountsService.create(user);
+		result = webUserService.update(user);
+		
+		return result;
+	}
+	
+	@RequestMapping(value = "/users", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseObject deleteUser(@RequestBody String param) throws Exception {
+		ResponseObject result;
+		
+		result = webUserService.delete(param);
 		
 		return result;
 	}

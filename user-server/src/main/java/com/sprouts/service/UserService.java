@@ -10,11 +10,15 @@ import com.sprouts.da.UserDAO;
 import com.sprouts.model.User;
 
 @Service("userService")
-public class UserService implements ServiceFacade {
+public class UserService {
 
+	// Managed Data Access Objects --------------------------------------------
+	
 	@Autowired
 	private UserDAO userDAO;
-
+	
+	// Simple CRUD Methods ----------------------------------------------------
+	
 	public Object doService(Object... args) throws Exception {
 		Assert.notNull(args[0]);
 		if (args[0].equals("insert")) {
