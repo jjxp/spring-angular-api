@@ -11,7 +11,11 @@ import org.sprouts.frontend.model.ResponseObject;
 import org.sprouts.frontend.model.User;
 import org.sprouts.frontend.service.WebService;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api
+@RequestMapping("/user")
 public class WebController {
 
 	// Managed stub services --------------------------------------------------
@@ -26,7 +30,7 @@ public class WebController {
 	
 	// Requests intercepter ---------------------------------------------------
 	
-	@RequestMapping(value = "users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> userInfo() {
 		List<User> result;
 		
@@ -35,7 +39,7 @@ public class WebController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/users", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseObject createUser(@RequestBody User user) throws Exception {
 		ResponseObject result;
 		
@@ -44,7 +48,7 @@ public class WebController {
 		return result;
 	}
 
-	@RequestMapping(value = "/users", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseObject updateUser(@RequestBody User user) throws Exception {
 		ResponseObject result;
 		
@@ -53,7 +57,7 @@ public class WebController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/users", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseObject deleteUser(@RequestBody String param) throws Exception {
 		ResponseObject result;
 		

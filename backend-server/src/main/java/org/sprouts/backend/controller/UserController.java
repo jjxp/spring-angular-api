@@ -12,10 +12,7 @@ import org.sprouts.backend.model.ResponseObject;
 import org.sprouts.backend.model.User;
 import org.sprouts.backend.service.UserService;
 
-import io.swagger.annotations.Api;
-
 @RestController
-@Api
 @RequestMapping("/user")
 public class UserController {
 

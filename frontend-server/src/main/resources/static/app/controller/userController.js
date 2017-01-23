@@ -8,7 +8,7 @@
 		var me = this;
 
 		self.doGetUsers = function() {
-			$http.get('/users').then(function(response) {
+			$http.get('/user/list').then(function(response) {
 				$scope.users = response.data;
 			});
 
@@ -16,8 +16,8 @@
 
 		$scope.doDeleteUser = function(id) {
 			$http({
-				method : 'DELETE',
-				url : '/users',
+				method : 'POST',
+				url : '/user/delete',
 				data : {
 					id : id
 				},
@@ -41,7 +41,7 @@
 		self.createUser = function() {
 			$http({
 				method : 'POST',
-				url : '/users',
+				url : '/user/create',
 				data : $scope.user,
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
@@ -53,8 +53,8 @@
 
 		self.updateUser = function() {
 			$http({
-				method : 'PUT',
-				url : '/users',
+				method : 'POST',
+				url : '/user/update',
 				data : $scope.user,
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
