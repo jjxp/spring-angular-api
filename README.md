@@ -1,8 +1,8 @@
-# spring-angular-api
+# sprouts-core
 
-[![Build Status](https://travis-ci.org/jjxp/spring-angular-api.svg?branch=master)](https://travis-ci.org/jjxp/spring-angular-api)
+[![Build Status](https://travis-ci.org/jjxp/sprouts-core.svg?branch=master)](https://travis-ci.org/jjxp/sprouts-core)
 
-spring-angular-api is a part of the Sprouts Framework project and aims to use AngularJS as a front-end technology using Spring Boot as a back-end server.
+sprouts-core is a part of the Sprouts Framework project and aims to use AngularJS as a front-end technology using Spring Boot as a back-end server.
 
 ### Technologies
 
@@ -16,6 +16,7 @@ The most important technologies that are being used in this project are, among o
 * [Maven] - as a build manager
 * [Swagger] - as a tool for automatically generating API documentation
 * [angular-translate] - as a package for i18n support
+* [Netflix Eureka] - as a service for microservice architecture purposes
 
 ### Installation
 
@@ -31,16 +32,21 @@ Please, note that this installation procedure is a quick-start installation and 
 For downloading and running this project, the following commands has to be run:
 
 ```sh
-$ git clone https://github.com/jjxp/spring-angular-api.git
-$ cd spring-angular-api
+$ git clone https://github.com/jjxp/sprouts-core.git
+$ cd sprouts-core
 $ mysql -uroot < initialize.sql
 $ mvn clean install spring-boot:run
 ```
+For each microservice, the last command shall be ran in a different command prompt. The order is as follows:
+* eureka-server
+* backend-server
+* frontend-server
+
 After the former is performed, the project should be running at http://localhost:8080/
 
 Licenses
 ----
-spring-angular-api is constrained to the following licenses:
+sprouts-core is constrained to the following licenses:
 * [TDG]
 * [ASLv2]
 * [CC BY-ND 3.0]
@@ -58,3 +64,4 @@ spring-angular-api is constrained to the following licenses:
    [AngularJS]: <http://angularjs.org>
    [Swagger]: <http://swagger.io/>
    [angular-translate]: <https://angular-translate.github.io/>
+   [Netflix Eureka]: <https://github.com/Netflix/eureka>
