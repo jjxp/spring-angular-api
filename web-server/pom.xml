@@ -5,7 +5,7 @@
     <artifactId>spring-angular-api</artifactId>
     <version>0.1</version>
   </parent>
-  <groupId>org.sprouts</groupId>
+  <groupId>org.sprouts.frontend</groupId>
   <artifactId>web-server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </project>
