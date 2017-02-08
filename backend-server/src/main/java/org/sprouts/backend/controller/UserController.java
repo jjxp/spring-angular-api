@@ -14,7 +14,7 @@ import org.sprouts.backend.service.UserService;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends AbstractController {
 
 	@Autowired
 	private UserService userService;
@@ -40,9 +40,5 @@ public class UserController {
 	public ResponseObject deleteUser(@RequestBody String param) throws Exception {
 		String id = String.valueOf(Integer.parseInt(param.replaceAll("[\\D]", "")));
 		return getResponseObject((Integer) userService.doService("delete", id));
-	}
-
-	private ResponseObject getResponseObject(Integer output) {
-		return new ResponseObject(output == 1 ? true : false, output == 1 ? "successful" : "failed");
 	}
 }

@@ -13,6 +13,9 @@ angularApp.config([ '$translateProvider', function($translateProvider) {
 	        prefix: '/app/view/user/locale-',
 	        suffix: '.json'
 	    }, {
+	        prefix: '/app/view/car/locale-',
+	        suffix: '.json'
+	    }, {
 	        prefix: '/app/view/api/locale-',
 	        suffix: '.json'
 	    }]

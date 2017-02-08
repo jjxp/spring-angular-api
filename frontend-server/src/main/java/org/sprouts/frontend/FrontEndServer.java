@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 import org.sprouts.frontend.controller.WebController;
 
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -33,7 +32,7 @@ public class FrontEndServer {
     }
 
     @Bean
-    public WebController usersController() {
+    public WebController webController() {
     	return new WebController("http://localhost:2222");
     }
     
@@ -42,7 +41,6 @@ public class FrontEndServer {
         return new Docket(DocumentationType.SWAGGER_2)          
           .select()
           .apis(RequestHandlerSelectors.basePackage("org.sprouts.frontend.controller"))
-          .paths(PathSelectors.ant("/user/*"))
           .build();
     }
 }

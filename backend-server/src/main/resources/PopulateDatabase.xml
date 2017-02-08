@@ -39,4 +39,20 @@
 		<property name="age" value="1" />
 	</bean>
 	
+	<!-- Cars -->
+
+	<bean id="car1" class="org.sprouts.backend.model.Car">
+		<property name="brand" value="Mercedes-Benz" />
+		<property name="model" value="300D w124" />
+		<property name="numberPlate" value="M 3528 GY" />
+		<property name="user" ref="user1" />
+	</bean>
+	
+	<bean id="car2" class="org.sprouts.backend.model.Car">
+		<property name="brand" value="BMW" />
+		<property name="model" value="320i E30" />
+		<property name="numberPlate" value="SE 4401 BB" />
+		<property name="user" ref="user2" />
+	</bean>
+	
 </beans>

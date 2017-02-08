@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.sprouts.frontend.model.Car;
 import org.sprouts.frontend.model.ResponseObject;
-import org.sprouts.frontend.model.User;
 
 @Service
-public class WebService {
+public class WebCarService {
 
 	// Rest template declaration ----------------------------------------------
 	
@@ -21,41 +21,24 @@ public class WebService {
 	
 	protected String serviceUrl;
 
-	public WebService(String serviceUrl) {
+	public WebCarService(String serviceUrl) {
 		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl
 				: "http://" + serviceUrl;
 	}
 
 	// Simulated service methods ----------------------------------------------
 	
-	public List<User> findAll() {
+	public List<Car> findAll() {
 		
-		User[] result = restTemplate.getForObject(serviceUrl + "/user/list",
-				User[].class);
+		Car[] result = restTemplate.getForObject(serviceUrl + "/car/list", Car[].class);
 		
 		return Arrays.asList(result);
 	}
 	
-	public ResponseObject create(User user) {
+	public ResponseObject create(Car car) {
 		ResponseObject result;
 		
-		result = restTemplate.postForObject(serviceUrl + "/user/create", user, ResponseObject.class);
-		
-		return result;
-	}
-	
-	public ResponseObject update(User user) {
-		ResponseObject result;
-		
-		result = restTemplate.postForObject(serviceUrl + "/user/update", user, ResponseObject.class);
-		
-		return result;
-	}
-	
-	public ResponseObject delete(String param) {
-		ResponseObject result;
-		
-		result = restTemplate.postForObject(serviceUrl + "/user/delete", param, ResponseObject.class);
+		result = restTemplate.postForObject(serviceUrl + "/car/create", car, ResponseObject.class);
 		
 		return result;
 	}
