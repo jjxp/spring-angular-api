@@ -1,6 +1,6 @@
 package org.sprouts.backend.controller;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,8 +20,8 @@ public class CarController extends AbstractController {
 	private CarService carService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Car> list() throws Exception {
-		List<Car> result = (List<Car>) carService.findAll();
+	public Collection<Car> list() throws Exception {
+		Collection<Car> result = carService.findAll();
 		return result;
 	}
 	

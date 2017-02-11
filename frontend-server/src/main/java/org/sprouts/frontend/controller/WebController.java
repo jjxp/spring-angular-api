@@ -1,6 +1,6 @@
 package org.sprouts.frontend.controller;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,8 +34,8 @@ public class WebController {
 	// Requests intercepter ---------------------------------------------------
 	
 	@RequestMapping(value = "/user/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<User> userInfo() {
-		List<User> result;
+	public Collection<User> userInfo() {
+		Collection<User> result;
 		
 		result = webUserService.findAll();
 		
@@ -70,8 +70,8 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "/car/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Car> carInfo() {
-		List<Car> result;
+	public Collection<Car> carInfo() {
+		Collection<Car> result;
 		
 		result = webCarService.findAll();
 		
