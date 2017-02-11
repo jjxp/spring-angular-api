@@ -23,15 +23,6 @@ public class User extends DomainEntity {
 
 	}
 
-	public User(int id, String firstName, String lastName, String age, String gender) {
-		super();
-		super.setId(id);
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-		this.gender = gender;
-	}
-
 	// Getters/Setters --------------------------------------------------------
 	
 	public String getFirstName() {

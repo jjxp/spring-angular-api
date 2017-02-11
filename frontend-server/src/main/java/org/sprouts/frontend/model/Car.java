@@ -26,13 +26,6 @@ public class Car extends DomainEntity {
 
 	}
 	
-	public Car(String brand, String model, String numberPlate) {
-		super();
-		this.brand = brand;
-		this.model = model;
-		this.numberPlate = numberPlate;
-	}
-	
 	// Getters/Setters --------------------------------------------------------
 	
 	public String getBrand() {
@@ -61,7 +54,7 @@ public class Car extends DomainEntity {
 	
 	// Relationships ----------------------------------------------------------
 	
-	public User user;
+	private User user;
 
 	@NotNull
 	@Valid
