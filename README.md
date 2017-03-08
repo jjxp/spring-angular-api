@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jjxp/sprouts-core.svg?branch=master)](https://travis-ci.org/jjxp/sprouts-core)
 
-sprouts-core is a part of the Sprouts Framework project and aims to use AngularJS as a front-end technology using Spring Boot as a back-end server.
+sprouts-core is a part of the Sprouts Project that aims to use AngularJS as a front-end technology using Spring Boot as a back-end server in order to ease use case implementation.
 
 ### Technologies
 
@@ -17,6 +17,7 @@ The most important technologies that are being used in this project are, among o
 * [Swagger] - as a tool for automatically generating API documentation
 * [angular-translate] - as a package for i18n support
 * [Netflix Eureka] - as a service for microservice architecture purposes
+* [zuul] - as a gateway service between frontend and backend for routing purposes
 
 ### Installation
 
@@ -65,3 +66,4 @@ sprouts-core is constrained to the following licenses:
    [Swagger]: <http://swagger.io/>
    [angular-translate]: <https://angular-translate.github.io/>
    [Netflix Eureka]: <https://github.com/Netflix/eureka>
+   [zuul]: <https://github.com/Netflix/zuul>
