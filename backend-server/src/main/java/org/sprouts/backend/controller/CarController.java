@@ -12,7 +12,10 @@ import org.sprouts.backend.model.Car;
 import org.sprouts.backend.model.ResponseObject;
 import org.sprouts.backend.service.CarService;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api
 @RequestMapping("/car")
 public class CarController extends AbstractController {
 

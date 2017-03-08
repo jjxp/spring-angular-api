@@ -12,3 +12,21 @@ eureka:
 # HTTP Server
 server:
   port: 8080   # HTTP (Tomcat) port
+  
+zuul:
+  routes:
+    user:
+      path: /user/*
+      url: http://localhost:2222/user
+    car:
+      path: /car/*
+      url: http://localhost:2222/car
+    api:
+      path: /v2/*
+      url: http://localhost:2222/v2
+    user-api:
+      path: /v2/user/*
+      url: http://localhost:2222/user
+    car-api:
+      path: /v2/car/*
+      url: http://localhost:2222/car
