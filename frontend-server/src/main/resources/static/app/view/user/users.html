@@ -9,7 +9,7 @@
             <tr ng-repeat="user in users">
                 <td>{{user.id}}</td>
                 <td>{{user.firstName}} {{user.lastName}}</td>
-                <td><a href="" ng-click="doEditUser(user.id)">{{ 'user.edit' | translate }}</a> | <a
+                <td><a href="" ng-click="doEditUser(user)">{{ 'user.edit' | translate }}</a> | <a
                     href="" ng-click="doDeleteUser(user.id)">{{ 'user.delete' | translate }}</a></td>
             </tr>
         </table>
@@ -62,6 +62,11 @@
                         ng-disabled="userForm.$invalid" />
                 </div>
             </form>
-        </div>
+
+			<div class="alert alert-danger alert-dismissable" ng-show="error">
+				<a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
+				<strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.
+			</div>
+		</div>
     </div>
 </div>

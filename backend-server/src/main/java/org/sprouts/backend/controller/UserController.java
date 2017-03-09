@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.sprouts.backend.model.ResponseObject;
 import org.sprouts.backend.model.User;
+import org.sprouts.backend.pojo.IntegerId;
+import org.sprouts.backend.pojo.ResponseObject;
 import org.sprouts.backend.service.UserService;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.Api;
 
@@ -39,9 +42,8 @@ public class UserController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseObject deleteUser(@RequestBody String param) throws Exception {
-		String id = String.valueOf(Integer.parseInt(param.replaceAll("[\\D]", "")));
-		User user = userService.findOne(Integer.valueOf(id));
+	public ResponseObject deleteUser(@JsonProperty("integerId") @RequestBody IntegerId integerId) throws Exception {
+		User user = userService.findOne(integerId.getId());
 		return getResponseObject(userService.delete(user));
 	}
 }

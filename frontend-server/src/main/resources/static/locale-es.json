@@ -5,5 +5,7 @@
   "index.apidocs_2": "documentación de nuestra API",
   "index.apidocs_3": "también!",
   "index.language": "Lenguaje",
-  "index.cars": "Coches"
+  "index.cars": "Coches",
+  "index.oops": "Ups!",
+  "index.error": "Parece que algo va mal"
 }

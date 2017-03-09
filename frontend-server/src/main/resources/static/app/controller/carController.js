@@ -3,11 +3,13 @@
 	var CarController = function($scope, $http) {
 		$scope.cars = []
 		$scope.users = []
+		$scope.error = false
 		var self = this;
 
 		self.doGetCars = function() {
 			$http.get('/car/list').then(function(response) {
 				$scope.cars = response.data;
+				$scope.errors = false;
 			});
 			
 			$http.get('/user/list').then(function(response) {
@@ -23,8 +25,10 @@
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
-			}).then(function(response) {
+			}).success(function(response) {
 				self.doGetCars();
+			}).error(function(response) {
+				$scope.errors = true;
 			});
 		}
 

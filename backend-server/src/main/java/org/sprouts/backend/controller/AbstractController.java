@@ -1,6 +1,6 @@
 package org.sprouts.backend.controller;
 
-import org.sprouts.backend.model.ResponseObject;
+import org.sprouts.backend.pojo.ResponseObject;
 
 public abstract class AbstractController {
 

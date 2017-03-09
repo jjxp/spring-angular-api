@@ -4,14 +4,15 @@
 		$scope.users = [],
 		$scope.user = {
 			gender : 'M'
-		};
+		},
+		$scope.error = false;
 		var me = this;
 
 		self.doGetUsers = function() {
 			$http.get('/user/list').then(function(response) {
 				$scope.users = response.data;
+				$scope.error = false;
 			});
-
 		}
 
 		$scope.doDeleteUser = function(id) {
@@ -24,18 +25,15 @@
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
-			}).then(function(response) {
+			}).success(function(response) {
 				self.doGetUsers();
-			});
+			}).error(function (response) {
+				$scope.error = true;
+	        });
 		}
 
-		$scope.doEditUser = function(id) {
-			for (var i = 0; i < $scope.users.length; i++) {
-				if ($scope.users[i].id === id) {
-					$scope.user = $scope.users[i];
-					break;
-				}
-			}
+		$scope.doEditUser = function(user) {
+			$scope.user = user;
 		}
 
 		self.createUser = function() {
@@ -46,9 +44,11 @@
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
-			}).then(function(response) {
+			}).success(function(response) {
 				self.doGetUsers();
-			});
+			}).error(function (response) {
+				$scope.error = true;
+	        });
 		}
 
 		self.updateUser = function() {
@@ -59,9 +59,11 @@
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
-			}).then(function(response) {
+			}).success(function(response) {
 				self.doGetUsers();
-			});
+			}).error(function (response) {
+				$scope.error = true;
+	        });
 		}
 
 		$scope.doSubmit = function() {
