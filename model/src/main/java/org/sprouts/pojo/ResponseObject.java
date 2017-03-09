@@ -1,4 +1,4 @@
-package org.sprouts.backend.pojo;
+package org.sprouts.pojo;
  
 public final class ResponseObject {
 	

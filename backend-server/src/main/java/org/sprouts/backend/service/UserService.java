@@ -5,7 +5,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sprouts.backend.da.UserDAO;
-import org.sprouts.backend.model.User;
+import org.sprouts.model.User;
+
 
 @Service("userService")
 public class UserService {

@@ -5,7 +5,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sprouts.backend.da.CarDAO;
-import org.sprouts.backend.model.Car;
+import org.sprouts.model.Car;
+
 
 @Service("carService")
 public class CarService {

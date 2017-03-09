@@ -35,7 +35,8 @@ import org.hibernate.dialect.Dialect;
 import org.hibernate.internal.util.ReflectHelper;
 import org.hibernate.jdbc.Work;
 import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.sprouts.backend.model.DomainEntity;
+import org.sprouts.model.DomainEntity;
+
 
 public class DatabaseUtil {
 	

@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.sprouts.backend.model.User;
-import org.sprouts.backend.pojo.ResponseObject;
 import org.sprouts.backend.service.UserService;
 
 import io.swagger.annotations.Api;
+import org.sprouts.model.User;
+import org.sprouts.pojo.ResponseObject;
 
 @RestController
 @Api

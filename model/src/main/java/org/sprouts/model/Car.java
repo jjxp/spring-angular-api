@@ -1,11 +1,6 @@
-package org.sprouts.backend.model;
+package org.sprouts.model;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -21,13 +16,13 @@ public class Car extends DomainEntity {
 	private String numberPlate;
 
 	// Constructors -----------------------------------------------------------
-	
+
 	public Car() {
 
 	}
-	
+
 	// Getters/Setters --------------------------------------------------------
-	
+
 	public String getBrand() {
 		return brand;
 	}
@@ -51,9 +46,9 @@ public class Car extends DomainEntity {
 	public void setNumberPlate(String numberPlate) {
 		this.numberPlate = numberPlate;
 	}
-	
+
 	// Relationships ----------------------------------------------------------
-	
+
 	private User user;
 
 	@NotNull

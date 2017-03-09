@@ -16,7 +16,8 @@ import javax.persistence.Entity;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.sprouts.backend.model.DomainEntity;
+import org.sprouts.model.DomainEntity;
+
 
 public class PopulateDatabase {
 

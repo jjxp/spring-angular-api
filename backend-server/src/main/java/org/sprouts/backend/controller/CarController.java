@@ -1,18 +1,17 @@
 package org.sprouts.backend.controller;
 
-import java.util.Collection;
-
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.sprouts.backend.model.Car;
-import org.sprouts.backend.pojo.ResponseObject;
 import org.sprouts.backend.service.CarService;
+import org.sprouts.model.Car;
+import org.sprouts.pojo.ResponseObject;
 
-import io.swagger.annotations.Api;
+import java.util.Collection;
 
 @RestController
 @Api

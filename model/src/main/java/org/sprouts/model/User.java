@@ -1,4 +1,4 @@
-package org.sprouts.backend.model;
+package org.sprouts.model;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
