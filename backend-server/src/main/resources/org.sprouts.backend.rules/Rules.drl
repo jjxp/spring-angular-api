@@ -1,0 +1,31 @@
+package org.sprouts.backend.rules;
+
+import org.sprouts.model.*;
+import org.sprouts.backend.service.CarService
+import org.sprouts.backend.service.UserService
+
+
+global CarService carService;
+
+function int getNumberOfCars(Car c) {
+    CarService carService = new CarService();
+    return carService.getNumOfCars(c.getUser());
+}
+
+rule "Users under 16 do not have a car"
+    when
+    	car : Car((int) user.age < 16);
+    then
+        throw new Exception("This user is not allowed to have a car");
+end
+
+
+rule "Only two cars per person"
+    when
+    	car: Car()
+    then
+        int num = carService.getNumOfCars(car.getUser());
+        if(num >= 2){
+            throw new Exception("This user can not have more cars");
+        }
+end

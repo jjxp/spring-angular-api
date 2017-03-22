@@ -1,5 +1,7 @@
 package org.sprouts.backend;
 
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +10,6 @@ import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.sprouts.backend.util.PopulateDatabase;
-
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -36,5 +37,10 @@ public class BackEndServer implements ApplicationRunner {
           .apis(RequestHandlerSelectors.basePackage("org.sprouts.backend.controller"))
           .build();
     }
+
+	@Bean
+	public KieContainer kieContainer() {
+		return KieServices.Factory.get().getKieClasspathContainer();
+	}
 
 }
