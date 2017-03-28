@@ -6,13 +6,14 @@ spring:
     url: jdbc:mysql://localhost:3306/sprouts-core
     username: manager
     password: root
+    driver-class-authority: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect    
+        dialect: org.hibernate.dialect.MySQL5Dialect
 
 # Discovery Server Access
 eureka:
