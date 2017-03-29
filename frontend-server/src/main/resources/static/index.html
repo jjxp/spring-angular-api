@@ -25,6 +25,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
 						<li><a href="#/car">{{ 'index.cars' | translate }}</a></li>
+						<li><a href="#/login">{{ 'index.login' | translate }}</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
@@ -64,6 +65,10 @@
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
 	<script type="text/javascript"
+			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js"></script>
+	<script type="text/javascript"
+			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
 	<script src="webjars/angular-swagger-ui/0.4.0/dist/scripts/swagger-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate.js"></script>
@@ -71,6 +76,7 @@
 	<script src="./app/app.js"></script>
 	<script src="./app/controller/routes.js"></script>
 	<script src="./app/controller/userController.js"></script>
+	<script src="./app/controller/loginController.js"></script>
 	<script src="./app/controller/carController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 </body>
