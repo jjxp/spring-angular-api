@@ -8,5 +8,6 @@
   "index.cars": "Coches",
   "index.oops": "Ups!",
   "index.error": "Parece que algo va mal",
-  "index.login": "Login"
+  "index.login": "Login",
+  "index.logout": "Logout"
 }

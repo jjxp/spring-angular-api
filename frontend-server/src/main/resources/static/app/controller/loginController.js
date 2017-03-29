@@ -29,6 +29,13 @@
                 console.log(data.data.access_token)
             });
         };
+
+        $scope.logout = function(){
+            $cookies.remove("access_token");
+            $http.get("/oauth/revoke");
+            window.location.replace('/');
+
+        };
     };
 
     angularApp.controllers.controller('LoginController', ['$scope', '$http', '$resource', '$httpParamSerializer', '$cookies', LoginController]);
