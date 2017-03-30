@@ -26,7 +26,6 @@
                     'Bearer ' + data.data.access_token;
                 $cookies.put("access_token", data.data.access_token);
                 window.location.href = "/";
-                console.log(data.data.access_token)
             });
         };
 
