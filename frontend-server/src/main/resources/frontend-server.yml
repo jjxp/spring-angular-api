@@ -18,9 +18,15 @@ zuul:
     user:
       path: /user/*
       url: http://localhost:2222/user
+      sensitive-headers: Cookie,Set-Cookie
     car:
       path: /car/*
       url: http://localhost:2222/car
+      sensitive-headers: Cookie,Set-Cookie
+    auth:
+      path: /oauth/*
+      url: http://localhost:2222/oauth
+      sensitive-headers: Cookie,Set-Cookie
     api:
       path: /v2/*
       url: http://localhost:2222/v2
@@ -30,3 +36,4 @@ zuul:
     car-api:
       path: /v2/car/*
       url: http://localhost:2222/car
+

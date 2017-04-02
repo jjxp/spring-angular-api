@@ -1,61 +1,74 @@
 package org.sprouts.model;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Access(AccessType.PROPERTY)
 @Table
 public class User extends DomainEntity {
 
-	// Attributes -------------------------------------------------------------
+    // Attributes -------------------------------------------------------------
 
-	private String firstName;
-	private String lastName;
-	private String age;
-	private String gender;
+    private String firstName;
+    private String lastName;
+    private String age;
+    private String gender;
 
-	// Constructors -----------------------------------------------------------
-	
-	public User() {
+    // Constructors -----------------------------------------------------------
 
-	}
+    public User() {
 
-	// Getters/Setters --------------------------------------------------------
-	
-	public String getFirstName() {
-		return firstName;
-	}
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    // Getters/Setters --------------------------------------------------------
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public String getAge() {
-		return age;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setAge(String age) {
-		this.age = age;
-	}
-	
-	// Relationships ----------------------------------------------------------
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    // Relationships ----------------------------------------------------------
+
+    private UserAccount userAccount;
+
+    @NotNull
+    @Valid
+    @OneToOne(optional = false)
+    @JoinColumn(name = "userAccountId")
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
 }

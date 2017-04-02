@@ -7,5 +7,7 @@
   "index.language": "Language",
   "index.cars": "Cars",
   "index.oops": "Oops!",
-  "index.error": "Something went wrong"
+  "index.error": "Something went wrong",
+  "index.login": "Login",
+  "index.logout": "Logout"
 }
