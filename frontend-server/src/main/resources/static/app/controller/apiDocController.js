@@ -4,7 +4,6 @@
 		$scope.isLoading = false;
 		$scope.url = $scope.swaggerUrl = '/v2/api-docs';
 		$scope.myErrorHandler = function(data, status) {
-			alert('Failed to load Swagger: [' + status + '] ' + data);
 		};
 
 		$scope.info = false;

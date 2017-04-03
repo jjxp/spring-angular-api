@@ -6,7 +6,6 @@
 			gender : 'M'
 		},
 		$scope.error = false;
-		var me = this;
 
 		self.doGetUsers = function() {
 			$http.get('/user/list').then(function(response) {
