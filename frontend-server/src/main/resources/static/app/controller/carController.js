@@ -9,7 +9,7 @@
 		self.doGetCars = function() {
 			$http.get('/car/list').then(function(response) {
 				$scope.cars = response.data;
-				$scope.errors = false;
+				$scope.error = false;
 			});
 			
 			$http.get('/user/list').then(function(response) {
@@ -25,12 +25,16 @@
 				headers : {
 					'Content-type' : 'application/json;charset=utf-8'
 				}
-			}).success(function(response) {
-				self.doGetCars();
-			}).error(function(response) {
-				$scope.errors = true;
-			});
-		}
+			}).success(function (response) {
+                if (response["success"]) {
+                    self.doGetCars();
+                } else {
+                    $scope.error = true;
+                }
+            }).error(function (response) {
+                $scope.error = true;
+            });
+        }
 
 		$scope.doSubmit = function() {
 			self.createCar();

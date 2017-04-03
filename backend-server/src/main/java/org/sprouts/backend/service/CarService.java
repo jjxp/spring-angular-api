@@ -1,11 +1,14 @@
 package org.sprouts.backend.service;
 
-import java.util.Collection;
-
+import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sprouts.backend.da.CarDAO;
 import org.sprouts.model.Car;
+import org.sprouts.model.User;
+
+import java.util.Collection;
 
 
 @Service("carService")
@@ -15,6 +18,9 @@ public class CarService {
 	
 	@Autowired
 	private CarDAO carDAO;
+
+	@Autowired
+	private KieContainer kieContainer;
 	
 	// Simple CRUD Methods ----------------------------------------------------
 	
@@ -35,9 +41,20 @@ public class CarService {
 	}
 	
 	public int save(Car car) {
-		carDAO.save(car);
+	    int res;
+		KieSession kieSession = kieContainer.newKieSession("Session");
+		kieSession.insert(car);
+		kieSession.setGlobal("carService", this);
+
+		try{
+            kieSession.fireAllRules();
+            carDAO.save(car);
+            res = 1;
+        }catch(Exception e){
+		    res = 0;
+        }
 		
-		return 1;
+		return res;
 	}
 	
 	public int delete(Car car) {
@@ -45,4 +62,8 @@ public class CarService {
 		
 		return 1;
 	}
+
+	public int getNumOfCars(User u){
+	    return carDAO.getNumOfCars(u);
+    }
 }
