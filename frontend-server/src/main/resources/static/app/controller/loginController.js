@@ -1,6 +1,12 @@
 'use strict';
 (function () {
     var LoginController = function ($scope, $http, $resource, $httpParamSerializer, $cookies) {
+        if($cookies.get("access_token") != null){
+            $scope.isLoggedIn = true;
+        }else{
+            $scope.isLoggedIn = false;
+        }
+
 
         $scope.login = function () {
 
@@ -29,11 +35,11 @@
             });
         };
 
-        $scope.logout = function(){
-            $cookies.remove("access_token");
-            $http.get("/oauth/revoke");
+        $scope.logout = function () {
+            $http.get("/oauth/revoke").then(function () {
+                $cookies.remove("access_token");
+            });
             window.location.replace('/');
-
         };
     };
 
