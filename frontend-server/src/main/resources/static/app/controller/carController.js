@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var CarController = function($scope, $http) {
+	var CarController = function($scope, $http, AuthService) {
 		$scope.cars = []
 		$scope.users = []
 		$scope.error = false
@@ -51,5 +51,5 @@
 
 	};
 
-	angularApp.controllers.controller('CarController', [ '$scope', '$http', CarController ]);
+	angularApp.controllers.controller('CarController', [ '$scope', '$http', 'AuthService', CarController ]);
 })();

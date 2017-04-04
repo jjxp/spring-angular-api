@@ -1,6 +1,6 @@
 'use strict';
 (function() {
-	var UserController = function($scope, $http) {
+	var UserController = function($scope, $http, AuthService) {
 		$scope.users = [],
 		$scope.user = {
 			gender : 'M'
@@ -87,5 +87,5 @@
 
 	};
 
-	angularApp.controllers.controller('UserController', [ '$scope', '$http', UserController ]);
+	angularApp.controllers.controller('UserController', [ '$scope', '$http', 'AuthService', UserController ]);
 })();
