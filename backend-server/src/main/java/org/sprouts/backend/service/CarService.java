@@ -1,5 +1,7 @@
 package org.sprouts.backend.service;
 
+import java.util.Collection;
+
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +9,6 @@ import org.springframework.stereotype.Service;
 import org.sprouts.backend.da.CarDAO;
 import org.sprouts.model.Car;
 import org.sprouts.model.User;
-
-import java.util.Collection;
 
 
 @Service("carService")
@@ -40,21 +40,15 @@ public class CarService {
 		return result;
 	}
 	
-	public int save(Car car) {
-	    int res;
+	public int save(Car car) throws Exception {
 		KieSession kieSession = kieContainer.newKieSession("Session");
 		kieSession.insert(car);
 		kieSession.setGlobal("carService", this);
 
-		try{
-            kieSession.fireAllRules();
-            carDAO.save(car);
-            res = 1;
-        }catch(Exception e){
-		    res = 0;
-        }
+        kieSession.fireAllRules();
+        carDAO.save(car);
 		
-		return res;
+		return 1;
 	}
 	
 	public int delete(Car car) {

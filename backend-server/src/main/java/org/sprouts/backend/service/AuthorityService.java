@@ -24,7 +24,7 @@ public class AuthorityService {
         Assert.notNull(userDetails);
         List<Authority> authorities = new ArrayList(userDetails.getAuthorities());
         Authority res = null;
-        if (authorities.size() > 0) {
+        if (!authorities.isEmpty()) {
             res = authorities.get(0);
         }
         return res;
