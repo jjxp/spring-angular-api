@@ -40,7 +40,7 @@ public class CarService {
 		return result;
 	}
 	
-	public int save(Car car) throws Exception {
+	public int save(Car car) {
 		KieSession kieSession = kieContainer.newKieSession("Session");
 		kieSession.insert(car);
 		kieSession.setGlobal("carService", this);
