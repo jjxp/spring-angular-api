@@ -28,16 +28,18 @@ zuul:
       url: http://localhost:2222/oauth
       sensitive-headers: Cookie,Set-Cookie
     authority:
-          path: /authority/*
-          url: http://localhost:2222/authority
-          sensitive-headers: Cookie,Set-Cookie
+      path: /authority/*
+      url: http://localhost:2222/authority
+      sensitive-headers: Cookie,Set-Cookie
     api:
       path: /v2/*
       url: http://localhost:2222/v2
     user-api:
       path: /v2/user/*
       url: http://localhost:2222/user
+      sensitive-headers: Cookie,Set-Cookie
     car-api:
       path: /v2/car/*
       url: http://localhost:2222/car
+      sensitive-headers: Cookie,Set-Cookie
 

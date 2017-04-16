@@ -58,17 +58,4 @@ public class User extends DomainEntity {
 
     // Relationships ----------------------------------------------------------
 
-    private UserAccount userAccount;
-
-    @NotNull
-    @Valid
-    @OneToOne(optional = false)
-    @JoinColumn(name = "userAccountId")
-    public UserAccount getUserAccount() {
-        return userAccount;
-    }
-
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
-    }
 }

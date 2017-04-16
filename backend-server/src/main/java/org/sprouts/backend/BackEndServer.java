@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
-import org.sprouts.backend.util.PopulateDatabase;
+
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -27,7 +27,6 @@ public class BackEndServer implements ApplicationRunner {
 	}
 
 	public void run(ApplicationArguments arg0) throws Exception {
-		PopulateDatabase.main(null);
 	}
 	
 	@Bean

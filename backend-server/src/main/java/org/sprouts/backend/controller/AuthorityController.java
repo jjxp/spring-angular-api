@@ -1,6 +1,5 @@
 package org.sprouts.backend.controller;
 
-import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,6 @@ import org.sprouts.backend.service.AuthorityService;
 import org.sprouts.model.Authority;
 
 @RestController
-@Api
 @RequestMapping("/authority")
 public class AuthorityController extends AbstractController {
 
