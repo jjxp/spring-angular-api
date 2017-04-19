@@ -16,7 +16,7 @@ public class HashPassword {
 			
 			String input = scanner.nextLine();
 			
-			if(input.equals("\\q")) {
+			if("\\q".equals(input)) {
 				break;
 			}
 			
