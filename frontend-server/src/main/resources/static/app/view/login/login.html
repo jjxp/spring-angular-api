@@ -35,6 +35,11 @@
                            value="{{ 'login.submit' | translate }}"
                            ng-disabled="loginForm.$invalid"/>
                 </div>
+
+                <div class="alert alert-danger alert-dismissable" ng-show="error">
+                    <a class="close" data-dismiss="alert" aria-label="close" ng-click="error = false">&times;</a>
+                    <strong>{{ 'index.oops' | translate }}</strong> {{ 'index.error' | translate }}.
+                </div>
             </form>
         </div>
     </div>

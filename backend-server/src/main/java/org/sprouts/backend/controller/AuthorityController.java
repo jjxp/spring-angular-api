@@ -17,7 +17,6 @@ public class AuthorityController extends AbstractController {
 
 	@RequestMapping(value = "/get", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Authority userInfo() throws Exception {
-		Authority result = authorityService.findByPrincipal();
-		return result;
+		return authorityService.findByPrincipal();
 	}
 }

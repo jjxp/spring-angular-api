@@ -27,6 +27,7 @@ public class BackEndServer implements ApplicationRunner {
 	}
 
 	public void run(ApplicationArguments arg0) throws Exception {
+		// Leave empty or not, but do not remove
 	}
 	
 	@Bean

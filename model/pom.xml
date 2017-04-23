@@ -6,7 +6,6 @@
     <artifactId>model</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-
     <parent>
         <groupId>org.sprouts.core</groupId>
         <artifactId>sprouts-core</artifactId>
@@ -26,7 +25,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -37,8 +35,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
-
-
 </project>
