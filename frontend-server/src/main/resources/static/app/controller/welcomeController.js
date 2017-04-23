@@ -5,7 +5,7 @@
 
         function init() {
             $scope.date = new Date();
-        };
+        }
         init();
     };
 
