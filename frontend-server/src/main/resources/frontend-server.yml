@@ -12,17 +12,10 @@ eureka:
 # HTTP Server
 server:
   port: 8080   # HTTP (Tomcat) port
-  
+
+# Zuul routes
 zuul:
   routes:
-    user:
-      path: /welcome/*
-      url: http://localhost:2222/welcome
-      sensitive-headers: Cookie,Set-Cookie
-    car:
-      path: /car/*
-      url: http://localhost:2222/car
-      sensitive-headers: Cookie,Set-Cookie
     auth:
       path: /oauth/*
       url: http://localhost:2222/oauth
@@ -34,12 +27,8 @@ zuul:
     api:
       path: /v2/*
       url: http://localhost:2222/v2
-    user-api:
-      path: /v2/welcome/*
-      url: http://localhost:2222/welcome
       sensitive-headers: Cookie,Set-Cookie
-    car-api:
-      path: /v2/car/*
-      url: http://localhost:2222/car
+    auth-api:
+      path: /v2/authority/*
+      url: http://localhost:2222/authority
       sensitive-headers: Cookie,Set-Cookie
-
