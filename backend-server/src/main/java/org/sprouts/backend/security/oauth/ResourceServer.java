@@ -30,7 +30,7 @@ public class ResourceServer {
                     .and()
                     .authorizeRequests()
                     .antMatchers("/car/").permitAll()
-                    .antMatchers("/user/**").authenticated();
+                    .antMatchers("/welcome/**").authenticated();
         }
 
     }

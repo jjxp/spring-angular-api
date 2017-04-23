@@ -24,7 +24,6 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#/">{{ 'index.home' | translate }}</a></li>
-						<li><a href="#/car">{{ 'index.cars' | translate }}</a></li>
 						<li><a href="#/login" ng-controller="LoginController" ng-hide="isLoggedIn">{{ 'index.login' | translate }}</a></li>
 						<li><a href="#" ng-controller="LoginController" ng-click="logout()" ng-show="isLoggedIn">{{ 'index.logout' | translate }}</a></li>
 					</ul>
@@ -48,7 +47,7 @@
 				</div>
 				<div class="col-md-4">
 					<h4>{{ 'index.source_code' | translate }}</h4>
-					<a href="https://github.com/jjxp/sprouts-core/"><img src="img/github-white.png" height="50"/></a>
+					<a href="https://github.com/sprouts-project/sprouts-core/"><img src="img/github-white.png" height="50"/></a>
 					<br><br>
 					<p>{{ 'index.apidocs_1' | translate }} <a href="#/apiDoc">{{ 'index.apidocs_2' | translate }}</a> {{ 'index.apidocs_3' | translate }}</p>
 				</div>
@@ -76,9 +75,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.13.1/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 	<script src="./app/app.js"></script>
 	<script src="./app/controller/routes.js"></script>
-	<script src="./app/controller/userController.js"></script>
+	<script src="./app/controller/welcomeController.js"></script>
 	<script src="./app/controller/loginController.js"></script>
-	<script src="./app/controller/carController.js"></script>
 	<script src="./app/controller/apiDocController.js"></script>
 </body>
 </html>

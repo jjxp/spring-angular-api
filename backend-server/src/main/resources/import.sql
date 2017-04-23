@@ -13,11 +13,4 @@ INSERT INTO useraccount (id, version, username, password) VALUES ('4', '0', 'use
 INSERT INTO user_authority (user_account, authority) VALUES ('3', '1');
 INSERT INTO user_authority (user_account, authority) VALUES ('4', '2');
 
-INSERT INTO user (id, version, firstName, lastName, age, gender) VALUES ('5', '0', 'Peter', 'Griffin', '42', 'M');
-INSERT INTO user (id, version, firstName, lastName, age, gender) VALUES ('6', '0', 'Lois', 'Griffin', '40', 'F');
-INSERT INTO user (id, version, firstName, lastName, age, gender) VALUES ('7', '0', 'Stewie', 'Griffin', '1', 'M');
-
-INSERT INTO car (id, version, brand, model, numberPlate, userId) VALUES ('8', '0', 'Mercedes-Benz', '300d w124', 'M 3023 HZ', '5');
-INSERT INTO car (id, version, brand, model, numberPlate, userId) VALUES ('9', '0', 'BMW', '320i E30', 'SE 1840 BP', '6');
-
 commit;
