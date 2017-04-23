@@ -10,10 +10,7 @@ angularApp.config(['$translateProvider', function ($translateProvider) {
             prefix: 'locale-',
             suffix: '.json'
         }, {
-            prefix: '/app/view/user/locale-',
-            suffix: '.json'
-        }, {
-            prefix: '/app/view/car/locale-',
+            prefix: '/app/view/welcome/locale-',
             suffix: '.json'
         }, {
             prefix: '/app/view/api/locale-',
@@ -59,3 +56,18 @@ angularApp.controller('languageController', ['$translate', '$scope',
             $translate.use(langKey);
         };
     }]);
+
+angularApp.service('AuthService', function() {
+    var $cookies;
+    angular.injector(['ngCookies']).invoke(['$cookies', function (_$cookies_) {
+        $cookies = _$cookies_;
+    }]);
+
+    this.getAuthority = function () {
+        var authority = null;
+        if ($cookies.get("access_token") && $cookies.get("authority")) {
+            authority = $cookies.get("authority");
+        }
+        return authority;
+    };
+});

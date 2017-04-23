@@ -1,6 +1,14 @@
 'use strict';
 (function () {
     var LoginController = function ($scope, $http, $resource, $httpParamSerializer, $cookies) {
+        $scope.error = false;
+
+        if ($cookies.get("access_token") != null) {
+            $scope.isLoggedIn = true;
+        } else {
+            $scope.isLoggedIn = false;
+        }
+
 
         $scope.login = function () {
 
@@ -21,21 +29,28 @@
                 },
                 data: $httpParamSerializer($scope.formRequest)
             }
-            $http(req).then(function (data) {
+            $http(req).success(function (data) {
                 $http.defaults.headers.common.Authorization =
-                    'Bearer ' + data.data.access_token;
-                $cookies.put("access_token", data.data.access_token);
-                window.location.href = "/";
+                    'Bearer ' + data.access_token;
+                $cookies.put("access_token", data.access_token);
+
+                $http.get("/authority/get").then(function (data) {
+                    $cookies.put("authority", data.data.authority);
+                    window.location.href = "/";
+                });
+            }).error(function (data) {
+                $scope.error = true;
             });
         };
 
-        $scope.logout = function(){
-            $cookies.remove("access_token");
-            $http.get("/oauth/revoke");
+        $scope.logout = function () {
+            $http.get("/oauth/revoke").then(function () {
+                $cookies.remove("authority");
+                $cookies.remove("access_token");
+            });
             window.location.replace('/');
-
         };
     };
 
-    angularApp.controllers.controller('LoginController', ['$scope', '$http', '$resource', '$httpParamSerializer', '$cookies', LoginController]);
+    angularApp.controllers.controller('LoginController', ['$scope', '$http', '$resource', '$httpParamSerializer', '$cookies', 'AuthService', LoginController]);
 })();

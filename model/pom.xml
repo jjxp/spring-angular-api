@@ -4,13 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.sprouts.model</groupId>
     <artifactId>model</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-
+    <version>1.0.RELEASE</version>
 
     <parent>
         <groupId>org.sprouts.core</groupId>
         <artifactId>sprouts-core</artifactId>
-        <version>0.1</version>
+        <version>1.0.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -26,7 +25,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -37,8 +35,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
-
-
 </project>
