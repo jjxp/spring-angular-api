@@ -7,8 +7,28 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 # HTTP Server
 server:
   port: 8080   # HTTP (Tomcat) port
+
+# Zuul routes
+zuul:
+  routes:
+    auth:
+      path: /oauth/*
+      url: http://localhost:2222/oauth
+      sensitive-headers: Cookie,Set-Cookie
+    authority:
+      path: /authority/*
+      url: http://localhost:2222/authority
+      sensitive-headers: Cookie,Set-Cookie
+    api:
+      path: /v2/*
+      url: http://localhost:2222/v2
+      sensitive-headers: Cookie,Set-Cookie
+    auth-api:
+      path: /v2/authority/*
+      url: http://localhost:2222/authority
+      sensitive-headers: Cookie,Set-Cookie
